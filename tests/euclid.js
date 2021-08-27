@@ -2,10 +2,17 @@
 
 QUnit.module('Тестируем функцию euclid', function () {
 	QUnit.test('На входе всего одно число', function (assert) {
-		assert.strictEqual(euclid(1), 1, 'euclid(1) === 1');
+		assert.strictEqual(euclid(1, 8), 1, 'euclid(1) === 1');
 		assert.strictEqual(euclid(2), 2, 'euclid(2) === 2');
 		assert.strictEqual(euclid(7), 7, 'euclid(7) === 7');
 		assert.strictEqual(euclid(6006), 6006, 'euclid(6006) === 6006');
+	});
+
+	QUnit.test('Функция должна правильно находить НОД двух натуральных чисел тоже', function (assert) {
+		assert.strictEqual(euclid(1, 2), 1, 'euclid(1, 2) === 1');
+		assert.strictEqual(euclid(17, 34), 17, 'euclid(17, 34) === 17');
+		assert.strictEqual(euclid(225, 10), 5, 'euclid(225, 10) === 5');
+		assert.strictEqual(euclid(225, 7), 1, 'euclid(225, 7) === 1');
 	});
 
 	QUnit.test('Функция должна правильно находить НОД трёх натуральных чисел', function (assert) {
