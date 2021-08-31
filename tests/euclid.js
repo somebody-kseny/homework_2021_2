@@ -2,7 +2,7 @@
 
 QUnit.module('Тестируем функцию euclid', function () {
 	QUnit.test('На входе всего одно число', function (assert) {
-		assert.strictEqual(euclid(1, 1), 1, 'euclid(1) === 1');
+		assert.strictEqual(euclid(1), 1, 'euclid(1) === 1');
 		assert.strictEqual(euclid(2), 2, 'euclid(2) === 2');
 		assert.strictEqual(euclid(7), 7, 'euclid(7) === 7');
 		assert.strictEqual(euclid(6006), 6006, 'euclid(6006) === 6006');
