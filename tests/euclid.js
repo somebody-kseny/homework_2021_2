@@ -2,7 +2,7 @@
 
 QUnit.module('Тестируем функцию euclid', function () {
 	QUnit.test('На входе всего одно число', function (assert) {
-		assert.strictEqual(euclid(1, 8), 1, 'euclid(1) === 1');
+		assert.strictEqual(euclid(1, 1), 1, 'euclid(1) === 1');
 		assert.strictEqual(euclid(2), 2, 'euclid(2) === 2');
 		assert.strictEqual(euclid(7), 7, 'euclid(7) === 7');
 		assert.strictEqual(euclid(6006), 6006, 'euclid(6006) === 6006');
@@ -34,5 +34,15 @@ QUnit.module('Тестируем функцию euclid', function () {
 
 		const temp = [ 80325, 55275, 8746650, 3000000, 45672375, 225, 54675 ];
 		assert.strictEqual(euclid(...[ ...temp, ...temp, ...temp, ...temp, ...temp ]), euclid(...temp));
+	});
+
+	QUnit.test('При вызове с неверными входными данными функция возвращает undefined', function (assert) {
+		let test; // == undefined
+		assert.strictEqual(euclid(), undefined, 'вызов с пустым массивом');
+		assert.strictEqual(euclid('a', 'b', 'b', 'a'), undefined, 'вызов с массивом строк, а не чисел');
+		assert.strictEqual(euclid('2', test, null, 56), undefined, 'вызов с массивом разных типов данных, начиная со строки');
+		assert.strictEqual(euclid(2, test, null, 56), undefined, 'вызов с массивом разных типов данных, начиная с числа');
+		assert.strictEqual(euclid( test, test*7, test+90, test*0.5), undefined, 'вызов с массивом только из undefined');
+		assert.strictEqual(euclid( null, null, null), undefined, 'вызов с массивом только из null');
 	});
 });
