@@ -9,7 +9,7 @@
   */
 
 const findNOD = (left, right) => {
-    if ( (isNaN(left)) || (isNaN(right)) || (left == null) || (right == null)) {
+    if ( (isNaN(left)) || (isNaN(right)) || (left === null) || (right === null)) {
         return undefined
     }
 
@@ -34,9 +34,9 @@ const euclid = (...numbers) => {
     if (numbers.length < 1){
         return undefined
     }
-    let current_nod = numbers.shift();
-    while(numbers.length > 0){
-        current_nod = findNOD(current_nod, numbers.shift());
-    }
+    let current_nod = numbers[0];
+    numbers.forEach((item) => {
+        current_nod = findNOD(current_nod, item);
+    });
     return current_nod;
 }
