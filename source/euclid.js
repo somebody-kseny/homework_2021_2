@@ -1,5 +1,5 @@
 // Это директива, которая заставляет использовать новый (5-й),
-    // несовместимый с предыдущими стандарт JavaScript
+// несовместимый с предыдущими стандарт JavaScript
 'use strict'; 
 
 /**
@@ -31,11 +31,11 @@
   */
 
 const findNOD = (left, right) => {
-    if ( ( typeof left !== "number" ) || ( typeof right !== "number" ) ) {
+    if (  typeof left !== "number"  ||  typeof right !== "number"  ) {
         return undefined;
     }
 
-    if ( (left <= 0) || (right <= 0) ) {
+    if ( left <= 0 || right <= 0 ) {
         return undefined;
     }
 
