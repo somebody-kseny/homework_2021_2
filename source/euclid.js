@@ -27,9 +27,8 @@
   * @returns {number} - НОД
   */
 
- const findNOD = (left, right) => {
-    if ( (isNaN(left)) || (isNaN(right)) || (left === null) || (right === null)) {
-    //if ( ( isNaN(left) ) || ( isNaN(right) ) ) {
+const findNOD = (left, right) => {
+    if ( (isNaN(left)) || (isNaN(right)) || (left === null) || (right === null) ) {
         return undefined;
     }
 
