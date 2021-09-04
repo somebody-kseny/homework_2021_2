@@ -14,12 +14,7 @@ const euclid = (...numbers) => {
     return undefined;
   }
 
-  let currentNod = numbers[0];
-  numbers.forEach(item => {
-    currentNod = findNOD(currentNod, item);
-  });
-
-  return currentNod;
+  return numbers.reduce(findNOD);
 };
 
 /**
@@ -27,8 +22,8 @@ const euclid = (...numbers) => {
  *
  * @param {number} left - первое число
  * @param {number} right - второе число
- * @returns { number|undefined} - число, НОД, если на вход поданы два натуральных числа. 
- *     Иначе - undefined
+ * @returns { number|undefined } - число, НОД, если на вход поданы два натуральных числа. 
+ * Иначе - undefined
  */
 
 const findNOD = (left, right) => {
